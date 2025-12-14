@@ -269,13 +269,22 @@ st.write(f"선택된 숫자: {number}")
 '### :orange[범위 슬라이더 : st.slider]'
 range_values = st.slider("숫자 범위를 선택하세요:", min_value=0, max_value=100, value=(20, 80), step=1)
 st.write(f"선택된 범위: {range_values[0]} - {range_values[1]}")
+
 '### :orange[날짜 슬라이더 : st.slider]'
-date = st.slider("날짜를 선택하세요:", 
-                 min_value=pd.to_datetime("2020-01-01"), 
-                 max_value=pd.to_datetime("2024-12-31"), 
-                 value=pd.to_datetime("2022-01-01"), 
-                 format="YYYY-MM-DD")
-st.write(f"선택된 날짜: {date.date()}")
+
+import datetime as dt
+
+date = st.slider(
+    "날짜를 선택하세요:",
+    min_value=dt.date(2020, 1, 1),
+    max_value=dt.date(2024, 12, 31),
+    value=dt.date(2022, 1, 1),
+    format="YYYY-MM-DD"
+)
+
+st.write(f"선택된 날짜: {date}")
+
+
 '### :orange[컬러피커]'
 color = st.color_picker("색상을 선택하세요:", "#00ff00")
 st.write(f"선택된 색상: {color}")
