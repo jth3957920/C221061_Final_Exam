@@ -185,3 +185,31 @@ with tab3:
 with st.expander("확장 레이아웃 열기"):
     st.write("여기에 추가 정보를 넣을 수 있습니다.")
     st.code('print("Hello, Streamlit!")', language='python')
+
+'# :blue[사용자 입력]'
+'### :orange[텍스트 입력 : st.text_input]'
+name = st.text_input("이름을 입력하세요:", "")
+if name:
+    st.write(f"안녕하세요, {name}님!")
+'### :orange[숫자 입력 : st.number_input]'
+age = st.number_input("나이를 입력하세요:", min_value=0, max_value=120, value=25, step=1)
+st.write(f"당신의 나이는 {age}세 입니다.")
+'### :orange[날짜 입력 : st.date_input]'
+birth_date = st.date_input("생일을 선택하세요:")
+st.write(f"당신의 생일은 {birth_date}입니다.")
+'### :orange[파일 업로드 : st.file_uploader]'
+uploaded_file = st.file_uploader("파일을 업로드하세요:", type=["csv", "xlsx", "txt"])
+if uploaded_file is not None:
+    st.write(f"업로드된 파일: {uploaded_file.name}")
+    # 파일 내용 읽기
+    file_details = {"파일명": uploaded_file.name, "파일형식": uploaded_file.type, "파일크기(바이트)": uploaded_file.size}
+    st.write(file_details)
+
+import os 
+if uploaded_file is not None:
+    save_path = os.path.join("../data/", uploaded_file.name)
+    with open(save_path, "wb") as f:
+        f.write(uploaded_file.getbuffer())
+    st.success(f"파일이 {save_path} 경로에 저장되었습니다.")
+
+    
