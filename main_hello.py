@@ -85,3 +85,11 @@ st.info('This is a purely informational message', icon="ℹ️")
 st.success('This is a success message!', icon="✅")
 st.warning('This is a warning message', icon="⚠️")
 st.error('This is an error message', icon="❌")
+
+df = pd.DataFrame(
+    {'id': [1, 2, 3],
+     'name': ['Alice', 'Bob', 'Charlie'],
+     'age': [24, 30, 22]
+     }
+)
+df
