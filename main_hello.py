@@ -216,4 +216,29 @@ if uploaded_file is not None:
 
     st.success(f"파일이 {save_path} 경로에 저장되었습니다.")
 
+'# :blue[버튼]'
+'### :orange[일반 버튼 : st.button]'
+button = st.button("일반 버튼 클릭")
+if button:
+    st.write("버튼이 클릭되었습니다!")
+'### :orange[주요 버튼 : primary]'
+primary_button = st.button("주요 버튼 클릭", type="primary")
+if primary_button:
+    st.write("주요 버튼이 클릭되었습니다!") 
 
+'### :orange[다운로드버튼 : st.download_button]'
+with open("python.jpg", "rb") as file:
+    btn = st.download_button(
+        label="파이썬 로고 다운로드",
+        data=file,
+        file_name="python_logo.jpg",
+        mime="image/jpg"
+    )
+
+'### :orange[피드백 버튼 : st.feedback]'
+sentiment_mapping = ["one", "two", "three", "four", "five"]
+selected = st.feedback("stars")
+if selected:
+    st.write(f"당신의 평점은 {sentiment_mapping.index(selected)+1}점 입니다.")
+'### :orange[링크 버튼 : st.link_button]'
+st.link_button("구글로 이동", "https://www.google.com")
