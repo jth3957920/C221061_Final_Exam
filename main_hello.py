@@ -52,7 +52,6 @@ st.latex(r'''
 ''')    
 st.divider()
 st.image("python.jpg", caption="파이썬 로고", use_container_width=True)
-'# Streamlit Magic'
 
 '# Streamlit Magic'
 
@@ -82,4 +81,7 @@ def hello_world():
 '''
 """
 
-
+st.info('This is a purely informational message', icon="ℹ️")
+st.success('This is a success message!', icon="✅")
+st.warning('This is a warning message', icon="⚠️")
+st.error('This is an error message', icon="❌")
