@@ -147,3 +147,36 @@ with col2:
 
 col3.write("## 컬럼 3")
 col3.selectbox("셀렉트박스", ['선택1','선택2','선택3'])
+
+'### :orange[탭 : st.tabs]'
+tab1, tab2, tab3 = st.tabs(['python','R','Julia'])
+with tab1:
+    st.write(
+        '''
+        ```python
+        import pandas as pd
+        df = pd.DataFrame({'A':[1,2,3],'B':[4,5,6]})
+        print(df)
+        ```
+        '''
+    )
+
+with tab2:
+    st.write(
+        '''
+        ```R
+        df <- data.frame(A=c(1,2,3), B=c(4,5,6))
+        print(df)
+        ```
+        '''
+    )
+
+with tab3:
+    st.write(
+        '''
+        ```julia
+        df = DataFrame(A=[1,2,3], B=[4,5,6])
+        println(df)
+        ```
+        '''
+    )
