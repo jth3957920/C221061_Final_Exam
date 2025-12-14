@@ -289,3 +289,34 @@ st.write(f"선택된 날짜: {date}")
 color = st.color_picker("색상을 선택하세요:", "#00ff00")
 st.write(f"선택된 색상: {color}")
 
+
+import time
+'### :orange[진행 표시줄 : st.progress]'
+button1 = st.button("진행 표시줄 시작")
+if button1:
+    progress_bar = st.progress(0)
+    for i in range(101):
+        progress_bar.progress(i)
+        if i % 10 == 0:
+            st.write(f"진행률: {i}%")
+        time.sleep(0.05)
+    st.success("작업이 완료되었습니다!")
+
+'### :orange[스피너 : st.spinner]'
+button2 = st.button("스피너 시작")
+if button2:
+    with st.spinner("작업 진행 중..."):
+        time.sleep(5)  # 작업 시뮬레이션
+    st.success("작업이 완료되었습니다!")
+
+'### :orange[풍선 애니메이션]'
+button3 = st.button("풍선 애니메이션 시작")
+if button3:
+    st.balloons()
+    st.success("풍선이 날아갔습니다!")
+
+'### :orange[눈송이 애니메이션]'
+button4 = st.button("눈송이 애니메이션 시작")
+if button4:
+    st.snow()
+    st.success("눈송이가 내립니다!")
