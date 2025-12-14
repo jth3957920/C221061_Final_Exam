@@ -240,7 +240,43 @@ sentiment_mapping = ["one", "two", "three", "four", "five"]
 selected = st.feedback("stars")
 if selected:
     st.markdown (f"당신은 { sentiment_mapping[selected]} star(s)을 선택하였습니다.")
-    
+
 '### :orange[링크 버튼 : st.link_button]'
-st.link_button("갤러리 링크", "https://streamlit.io/gallery")
+st.link_button("구글로 이동", "https://www.google.com")
+
+'# :blue[선택]'
+'### :orange[셀렉트박스 : st.selectbox]'
+selected_option = st.selectbox("옵션을 선택하세요:", ["옵션 1", "옵션 2", "옵션 3"])
+st.write(f"선택된 옵션: {selected_option}")
+
+'### :orange[멀티셀렉트박스 : st.multiselect]'
+selected_options = st.multiselect("여러 옵션을 선택하세요:", ["옵션 A", "옵션 B", "옵션 C", "옵션 D"])
+st.write(f"선택된 옵션들: {', '.join(selected_options)}")
+
+'### :orange[라디오 버튼 : st.radio] '
+radio_option = st.radio("하나의 옵션을 선택하세요:", ["라디오 1", "라디오 2", "라디오 3"])
+st.write(f"선택된 라디오 옵션: {radio_option}")
+
+'### :orange[체크박스 : st.checkbox]'
+checkbox = st.checkbox("체크박스를 선택하세요")
+if checkbox:
+    st.write("체크박스가 선택되었습니다!")
+
+'# :blue[슬라이더]'
+'### :orange[숫자 슬라이더 : st.slider]'
+number = st.slider("숫자를 선택하세요:", min_value=0, max_value=100, value=50, step=1)
+st.write(f"선택된 숫자: {number}")
+'### :orange[범위 슬라이더 : st.slider]'
+range_values = st.slider("숫자 범위를 선택하세요:", min_value=0, max_value=100, value=(20, 80), step=1)
+st.write(f"선택된 범위: {range_values[0]} - {range_values[1]}")
+'### :orange[날짜 슬라이더 : st.slider]'
+date = st.slider("날짜를 선택하세요:", 
+                 min_value=pd.to_datetime("2020-01-01"), 
+                 max_value=pd.to_datetime("2024-12-31"), 
+                 value=pd.to_datetime("2022-01-01"), 
+                 format="YYYY-MM-DD")
+st.write(f"선택된 날짜: {date.date()}")
+'### :orange[컬러피커]'
+color = st.color_picker("색상을 선택하세요:", "#00ff00")
+st.write(f"선택된 색상: {color}")
 
