@@ -132,3 +132,18 @@ fig = px.scatter(df, x='sepal_width', y='sepal_length',
                  color='species', size='petal_length',
                  hover_data=['petal_width'])
 st.plotly_chart(fig, key = "iris",on_select="rerun")
+
+'### :orange[컬럼: st.columns]'
+col1, col2, col3 = st.columns([1,2,1])
+with col1:
+    st.write("## 컬럼 1")
+    st.checkbox("체크박스1")
+    st.checkbox("체크박스2")
+
+with col2:
+    st.write("## 컬럼 2")
+    st.radio("라디오 선택", ['옵션1','옵션2','옵션3'])
+
+
+col3.write("## 컬럼 3")
+col3.selectbox("셀렉트박스", ['선택1','선택2','선택3'])
