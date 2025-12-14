@@ -107,7 +107,7 @@ st.pyplot(fig)
 
 st.divider()
 
-'### : orange[Altair : st.altair_chart]'
+'### :orange[Altair : st.altair_chart]'
 import altair as alt
 
 chart_data = pd.DataFrame(
@@ -125,7 +125,7 @@ c= alt.Chart(chart_data).mark_circle().encode(
 
 st.altair_chart(c, use_container_width=True)
 
-'### : orange[Plotly : st.plotly_chart]'
+'### :orange[Plotly : st.plotly_chart]'
 import plotly.express as px
 df = px.data.iris()
 fig = px.scatter(df, x='sepal_width', y='sepal_length',
