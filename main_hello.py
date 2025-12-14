@@ -52,10 +52,9 @@ st.latex(r'''
 ''')    
 st.divider()
 st.image("python.jpg", caption="파이썬 로고", use_container_width=True)
-
 '# Streamlit Magic'
 
-```
+"""
 ### 마크다운 헤더3
 - 마크다운 목록1. **굵게** 표시
 - 마크다운 목록2. *기울임* 표시
@@ -78,8 +77,5 @@ st.image("python.jpg", caption="파이썬 로고", use_container_width=True)
 ```python
 def hello_world():
     print("Hello, World!")
-
-
-
 
 
