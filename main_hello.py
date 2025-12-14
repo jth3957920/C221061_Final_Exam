@@ -180,3 +180,8 @@ with tab3:
         ```
         '''
     )
+
+'### :orange[확장 레이아웃 : st.expander]'
+with st.expander("확장 레이아웃 열기"):
+    st.write("여기에 추가 정보를 넣을 수 있습니다.")
+    st.code('print("Hello, Streamlit!")', language='python')
