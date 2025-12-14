@@ -334,3 +334,25 @@ result = long_running_function(num)
 end = time.time()
 st.write(f"결과: {result}")
 st.write(f"실행 시간: {end - start} 초")
+
+'# 세션'
+df = pd.DataFrame(
+    np.random.randn(20,2),
+    columns=['x','y']
+)
+st.write("### :orange[session_state 사용 안한 경우]")
+color1 = st.color_picker("점 색상 선택1", "#ff0000", key="color1")
+st.divider()
+st.scatter_chart(df,x='x', y='y', color=color1)
+
+if "df" not in st.session_state:
+    st.session_state.df = pd.DataFrame(
+        np.random.randn(20,2),  
+        columns=['x','y']
+    )
+
+st.write("### :orange[session_state 사용한 경우]")
+color2 = st.color_picker("점 색상 선택2", "#0000ff", key="color2")
+st.divider()
+st.scatter_chart(st.session_state.df, x='x', y='y', color=color2)
+st.write("세션 상태에 저장된 데이터프레임:")
