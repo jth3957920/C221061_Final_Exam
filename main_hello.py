@@ -239,6 +239,7 @@ with open("python.jpg", "rb") as file:
 sentiment_mapping = ["one", "two", "three", "four", "five"]
 selected = st.feedback("stars")
 if selected:
-    st.write(f"당신의 평점은 {sentiment_mapping.index(selected)+1}점 입니다.")
+    st.markdown (f"당신은 { sentiment_mapping[selected]} star(s)을 선택하였습니다.")
+    
 '### :orange[링크 버튼 : st.link_button]'
 st.link_button("구글로 이동", "https://www.google.com")
