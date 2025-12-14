@@ -78,5 +78,5 @@ st.image("python.jpg", caption="파이썬 로고", use_container_width=True)
 ''' python
 def hello_world():
 	print("Hello, World!")
-'''
-"""
+
+
