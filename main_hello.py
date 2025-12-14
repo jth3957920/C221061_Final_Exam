@@ -205,11 +205,15 @@ if uploaded_file is not None:
     file_details = {"파일명": uploaded_file.name, "파일형식": uploaded_file.type, "파일크기(바이트)": uploaded_file.size}
     st.write(file_details)
 
-import os 
+import os
+import streamlit as st
+
 if uploaded_file is not None:
-    save_path = os.path.join("../data/", uploaded_file.name)
+    save_path = uploaded_file.name  # 현재 디렉터리
+
     with open(save_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
+
     st.success(f"파일이 {save_path} 경로에 저장되었습니다.")
 
-    
+
