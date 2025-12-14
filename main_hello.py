@@ -320,3 +320,17 @@ button4 = st.button("눈송이 애니메이션 시작")
 if button4:
     st.snow()
     st.success("눈송이가 내립니다!")
+
+
+'# 캐싱'
+import time
+@st.cache_data
+def long_running_function(n):
+    time.sleep(5)
+    return n*n
+start = time.time()
+num = st.number_input("숫자를 입력하세요:", min_value=1, max_value=100, value=10, step=1)
+result = long_running_function(num)
+end = time.time()
+st.write(f"결과: {result}")
+st.write(f"실행 시간: {end - start} 초")
