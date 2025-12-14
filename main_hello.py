@@ -94,3 +94,41 @@ df = pd.DataFrame(
      }
 )
 df
+'### :orange[Matplotlib : st.pyplot]'
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+fig, ax = plt.subplots()
+ax.plot(x, y )
+st.pyplot(fig)
+
+st.divider()
+
+'### : orange[Altair : st.altair_chart]'
+import altair as alt
+
+chart_data = pd.DataFrame(
+    np.random.randn(100, 3),
+    columns=['a', 'b', 'c']
+)
+
+c= alt.Chart(chart_data).mark_circle().encode(
+    x='a',
+    y='b',
+    size='c',
+    color='c',
+    tooltip=['a', 'b', 'c']
+).interactive()
+
+st.altair_chart(c, use_container_width=True)
+
+'### : orange[Plotly : st.plotly_chart]'
+import plotly.express as px
+df = px.data.iris()
+fig = px.scatter(df, x='sepal_width', y='sepal_length',
+                 color='species', size='petal_length',
+                 hover_data=['petal_width'])
+st.plotly_chart(fig, key = "iris",on_select="rerun")
