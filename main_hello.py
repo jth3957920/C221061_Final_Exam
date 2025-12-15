@@ -13,7 +13,6 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider
-import koreanize_matplotlib
 
 import seaborn as sns
 import plotly.express as px
@@ -60,5 +59,6 @@ st.image("Takedown 케이팝 데몬 헌터스_sim키워드_히스토그램.png",
 st.image("통합 데이터 word Cloud 시각화.png", caption="파이썬 로고", use_container_width=True)
 st.image("통합 데이터 네트워크 시각화.png", caption="파이썬 로고", use_container_width=True)
 st.image("통합 데이터키워드_히스토그램.png", caption="파이썬 로고", use_container_width=True)
+
 
 
