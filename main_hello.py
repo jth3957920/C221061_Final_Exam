@@ -179,7 +179,7 @@ draw_altair_bar_plot_with_slider(combined_df, "통합 데이터", top_k=top_k)
 """
 # 결과 해석
 ---
-#### 케이팝 데몬 헌터스의 노래 'Golden'과 'Takedown'이 각각 sim과 date 키워드와 함께 뉴스 기사에서 많이 언급되고 있음을 알 수 있습니다.
+#### 케이팝 데몬 헌터스의 노래 'Golden'과 'Takedown'이 뉴스 기사에서 많이 언급되고 있음을 알 수 있습니다.
 #### Golden 은 특히 goldenGlove의 수상 후보로 오르며 많은 기사가 쏟아져 나왔고, 
 #### Takedown은 빌보드 차트에서 좋은 성적을 거두며 여러 기사가 작성된 것으로 보입니다.
 #### 이러한 기사를 보아 OST 가 케이팝 데몬 헌터스의 인기와 성공에 중요한 역할을 한 것으로 해석할 수 있습니다.
@@ -188,3 +188,4 @@ draw_altair_bar_plot_with_slider(combined_df, "통합 데이터", top_k=top_k)
 #### 이를 통해 케이팝 데몬 헌터스가 단순한 애니메이션을 넘어 한국 문화와 산업 전반에 긍정적인 영향을 미치고 있음을 알 수 있습니다.
 
 """
+
