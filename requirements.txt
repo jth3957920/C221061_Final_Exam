@@ -1,8 +1,6 @@
 streamlit
 pandas
 numpy
-konlpy
-ckonlpy
 matplotlib
 koreanize-matplotlib
 seaborn
