@@ -1,6 +1,13 @@
 streamlit
-numpy
 pandas
+numpy
+konlpy
+ckonlpy
 matplotlib
-altair
+koreanize-matplotlib
+seaborn
 plotly
+altair
+wordcloud
+Pillow
+networkx
